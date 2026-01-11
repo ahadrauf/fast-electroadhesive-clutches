@@ -14,7 +14,7 @@ plt.rc('ytick', labelsize=16)  # fontsize of the y tick labels
 plt.rc('legend', fontsize=16)  # fontsize of the legend
 plt.rcParams['pdf.fonttype'] = 42
 plt.rcParams['ps.fonttype'] = 42
-save_folder = "C:/Users/ahadrauf/Desktop/Research/latex/electroadhesive_dynamics_paper/figures/"
+save_folder = "../figures/"
 
 N = 4
 eps0 = 8.854e-12
@@ -77,8 +77,8 @@ ax2.set_xticks([1, 10, 100, 1000, kappa_range[-1]], [r"$10^0$", r"$10^1$", r"$10
 fig.text(0, 1, "(c)", transform=fig.transFigure, horizontalalignment='left', verticalalignment='top')
 fig.text(0.51, 1, "(d)", transform=fig.transFigure, horizontalalignment='left', verticalalignment='top')
 
-# plt.savefig("../TMech 2024/figures_test/" + timestamp + ".png", dpi=300)
+# plt.savefig("../figures/" + timestamp + ".png", dpi=300)
 # # plt.savefig(save_folder + timestamp + ".svg")
-# plt.savefig("../TMech 2024/figures_test/" + timestamp + ".pdf")
+# plt.savefig("../figures/" + timestamp + ".pdf")
 plt.show()
 

@@ -111,13 +111,13 @@ for i, V in enumerate(sorted(all_V)):
 
 ax2.grid(True)
 ax2.set_xlabel("Drive Frequency (Hz)")
-ax2.set_ylabel("Max % Shear Force Lost After a Slip", y=0.45)
+ax2.set_ylabel("Max % Shear Force Lost After a Slip", y=0.4)
 ax2.yaxis.set_major_formatter(mticker.PercentFormatter())
 ax2.set_xscale('log')
 ax2.set_xticks([0.1, 1, 10, 100, 1000, 10000], ["DC", r"$10^0$", r"$10^1$", r"$10^2$", r"$10^3$", r"$10^4$"])
 ax2.set_yticks([0, 25, 50, 75])
 ax2.legend(reversed(all_lines), ["300 V", "250 V", "200 V", "150 V"], loc='upper right', fontsize=14)
-fig2.text(0.00, 1, "(b)", transform=fig2.transFigure, horizontalalignment='left', verticalalignment='top')
+fig2.text(0.00, 1, "(b)", transform=fig2.transFigure, horizontalalignment='left', verticalalignment='top', fontsize=16)
 
 # np.save(save_folder + timestamp + "_plotdata", [all_V, all_freq, all_load_cell_slip_force_df, all_load_cell_slip_recovery_times, all_load_cell_max_force])
 # plt.savefig(save_folder + timestamp + ".png", dpi=300)

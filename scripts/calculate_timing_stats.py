@@ -111,7 +111,7 @@ def calculate_release_time(file_name, plot=False, verbose=True):
         if verbose:
             print("Load cell released unnaturally before voltage released, released at",
                   time_loadcell[np.where(load_cell_filtered > load_cell_final + 0.3*(np.max(load_cell_filtered) - load_cell_final))[0][-1]])
-        return np.infty, np.infty, np.infty, np.infty, np.infty
+        return np.inf, np.inf, np.inf, np.inf, np.inf
 
     load_cell_before_drop = np.max(load_cell[idx_relay_input_fall - int(12800*0.1):idx_relay_input_fall + int(12800*0.1)])
     loadcell_fall_threshold = load_cell_final + (load_cell_before_drop - load_cell_final)*0.1

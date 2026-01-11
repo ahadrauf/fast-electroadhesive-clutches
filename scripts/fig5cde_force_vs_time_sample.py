@@ -22,7 +22,6 @@ plt.rcParams['ps.fonttype'] = 42
 file_loc = "C:/Users/ahadrauf/Desktop/Research/medical_shape_display/data/strain_tests/"
 file_name = "20240729_18_07_32_test_stepper_hv507_ad7124_onboardlogging_nodelaydx=1.5_speed=1s_V=300_f=10.npy"
 
-# time_loadcell, load_cell, stage, idx_stop_moving, idx_relay_input_rise, idx_relay_input_fall = import_data(file_loc + file_name)
 time_loadcell, load_cell, stage, relay_output, idx_stop_moving, idx_relay_input_rise, idx_relay_input_fall = import_data(file_loc + file_name,
                                                                                                                          zero_load_cell=False,
                                                                                                                          convert_to_kPa=True,
@@ -118,7 +117,7 @@ didx_plot = int(9300*0.015)
 ax3.plot(1e3*(time_loadcell[idx_relay_input_fall - didx_plot:idx_relay_input_fall + didx_plot] - time_loadcell[idx_relay_input_fall]),
          load_cell[idx_relay_input_fall - didx_plot:idx_relay_input_fall + didx_plot])
 
-# The load cell plot is based on the original file, but I'm plotting the relay voltage output based on another datasheet that recorded the voltage of the second electrode instead
+# The load cell plot is based on the original file, but I'm plotting just the relay voltage output based on another datasheet that recorded the voltage of the second electrode instead (to better show the release time)
 file_name = "20240729_19_34_40_test_stepper_hv507_ad7124_onboardlogging_nodelaydx=1.5_speed=1s_V=300_f=1.npy"
 time_loadcell, load_cell, stage, relay_output, idx_stop_moving, idx_relay_input_rise, idx_relay_input_fall = import_data(file_loc + file_name, zero_load_cell=False, convert_to_kPa=True, width_pattern=2, length_pattern=55.5)
 ax3_right.plot(1e3*(time_loadcell[idx_relay_input_fall - didx_plot:idx_relay_input_fall + didx_plot] - time_loadcell[idx_relay_input_fall]),

@@ -25,7 +25,7 @@ class PrevWork:
         self.voltages = voltages
         self.areas_cm2 = areas_cm2
         self.shear_force_densities = shear_force_densities if shear_force_densities else \
-            [shear_force/area*10 for shear_force, area in zip(self.shear_forces, self.areas_cm2)]
+            [shear_force / area * 10 for shear_force, area in zip(self.shear_forces, self.areas_cm2)]
         self.engagement_time = engagement_time
         self.release_time = release_time
         self.interdigitated_electrodes = interdigitated_electrodes
@@ -44,7 +44,7 @@ class PrevWork:
             return np.max(arr)
 
     def get_max_shear_force_density_per_volt(self, return_idx=False):  # kPa/V^2
-        arr = [shear_force_density/volt for shear_force_density, volt in
+        arr = [shear_force_density / volt for shear_force_density, volt in
                zip(self.shear_force_densities, self.voltages)]
         if return_idx:
             return np.max(arr), np.argmax(arr)
@@ -52,7 +52,7 @@ class PrevWork:
             return np.max(arr)
 
     def get_max_shear_force_density_per_volt2(self, return_idx=False):  # Pa/V^2
-        arr = [shear_force_density/(volt**2)*1e3 for shear_force_density, volt in
+        arr = [shear_force_density / (volt**2) * 1e3 for shear_force_density, volt in
                zip(self.shear_force_densities, self.voltages)]
         if return_idx:
             return np.max(arr), np.argmax(arr)
@@ -64,22 +64,22 @@ lit = [PrevWork("This Work", shear_forces=(4.756,), voltages=(250,), areas_cm2=(
                 arrow_dx=24, arrow_dy=20, annotation_ha='center', annotation_va='bottom'),
        PrevWork("Zhang 2019", shear_forces=(0.946, 0.798, 0.5796, 0.3942, 0.290, 0.437, 0.374, 0.406, 0.0789, 0.8699, 0.8365, 0.7571, 0.77277, 0.6482, 0.4197),
                 voltages=(355, 294, 250, 194, 160, 194, 160, 124, 84, 335, 294, 250, 194, 160, 124),
-                areas_cm2=15*[6.03*0.16], engagement_time=6.7e-3, substrate="Brass",
+                areas_cm2=15 * [6.03 * 0.16], engagement_time=6.7e-3, substrate="Brass",
                 arrow_dx=0, arrow_dy=-20, annotation_ha='center', annotation_va='top'),
-       PrevWork("Shultz 2023", shear_forces=(0.0807, 0.933), voltages=(250/np.sqrt(2), 250/np.sqrt(2)), areas_cm2=(1, 1)),
+       PrevWork("Shultz 2023", shear_forces=(0.0807, 0.933), voltages=(250 / np.sqrt(2), 250 / np.sqrt(2)), areas_cm2=(1, 1)),
        PrevWork("Kim 2023", shear_forces=(10.15, 7.02), voltages=(3500, 1500), areas_cm2=(4.776, 4.776)),
        PrevWork("Choi 2020", shear_force_densities=(23.9, 50, 10), voltages=(1000, 800, 100)),
        PrevWork("Cacucciolo 2019", shear_forces=(10,), voltages=(3500,), areas_cm2=(2,), release_time=150e-3, interdigitated_electrodes=True, substrate="PMMA Plastic",
                 arrow_dx=-20, arrow_dy=0, annotation_ha='right', annotation_va='center', arrow_relpos=(0.5, 0.5)),  # previously, I said release time = 30e-3. Not sure why? 150ms based on Fig. 5a (many release curves have ~1.5 points, and force readings are sampled every 100 ms)),
-       PrevWork("Wang 2014", shear_forces=(6.68,), voltages=(600/np.sqrt(2),), areas_cm2=(27.4*17.3,)),
-       PrevWork("Liu 2013", shear_forces=(37, 45.6), voltages=(2000, 3000), areas_cm2=(30*24, 30*24)),
-       PrevWork("Yamamoto 2007", shear_forces=(18.85,), voltages=(1400/np.sqrt(2),), areas_cm2=(7.5*13,)),
+       PrevWork("Wang 2014", shear_forces=(6.68,), voltages=(600 / np.sqrt(2),), areas_cm2=(27.4 * 17.3,)),
+       PrevWork("Liu 2013", shear_forces=(37, 45.6), voltages=(2000, 3000), areas_cm2=(30 * 24, 30 * 24)),
+       PrevWork("Yamamoto 2007", shear_forces=(18.85,), voltages=(1400 / np.sqrt(2),), areas_cm2=(7.5 * 13,)),
        PrevWork("Yehya 2016", shear_forces=(141.131, 74.1636, 33.55, 25.5, 9.516), voltages=(8000, 5000, 3000, 8000, 4000), areas_cm2=(400, 400, 400, 64, 64)),
        PrevWork("Choi 2019", shear_force_densities=(14.6, 10.8, 8.74), voltages=(1000, 1800, 2000)),
        PrevWork("Digumarti 2021", shear_force_densities=(0.534, 0.4222, 0.409), voltages=(1500, 1200, 1000)),
        PrevWork("Ruffatto 2014", shear_force_densities=(11.3, 45.9, 62, 36), voltages=(5000, 5000, 5000, 5000)),
-       PrevWork("Prahlad 2008", shear_force_densities=(4.4, 2.1, 2.4, 4.1, 1.7, 0.8, 14), voltages=7*[4000]),
-       PrevWork("Cacucciolo 2022", shear_forces=(1.4059, 0.69037, 0.092998), voltages=(3000, 2000, 1000), areas_cm2=(2*3, 2*3, 2*3),
+       PrevWork("Prahlad 2008", shear_force_densities=(4.4, 2.1, 2.4, 4.1, 1.7, 0.8, 14), voltages=7 * [4000]),
+       PrevWork("Cacucciolo 2022", shear_forces=(1.4059, 0.69037, 0.092998), voltages=(3000, 2000, 1000), areas_cm2=(2 * 3, 2 * 3, 2 * 3),
                 engagement_time=300e-3, release_time=300e-3, interdigitated_electrodes=True, substrate="Fruit",
                 arrow_dx=-20, arrow_dy=45, annotation_ha='center', annotation_va='bottom', arrow_relpos=(0.75, 0.5)),
        PrevWork("Hinchet 2020", engagement_time=5e-3, release_time=15e-3, interdigitated_electrodes=False,
@@ -145,8 +145,8 @@ print("Number of papers:", len(lit))
 print("Number of points to draw:", len(all_x))
 xmin, xmax = 1e-5, 2e1
 ymin, ymax = 5e-4, 2e2
-offset_pct_x = lambda x, dpct: x*np.power(10, dpct*np.log10(xmax/xmin))
-offset_pct_y = lambda y, dpct: y*np.power(10, dpct*np.log10(ymax/ymin))
+offset_pct_x = lambda x, dpct: x * np.power(10, dpct * np.log10(xmax / xmin))
+offset_pct_y = lambda y, dpct: y * np.power(10, dpct * np.log10(ymax / ymin))
 ax.hlines(1e2, xmin=xmin, xmax=xmax, colors='r', alpha=0.4)
 ax.vlines(10, ymin=ymin, ymax=ymax, colors='r', alpha=0.4)
 scatter_plot = ax.scatter(all_x, all_y, marker='o', edgecolors='k', c='y', s=40, zorder=99)

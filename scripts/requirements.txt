@@ -1,0 +1,8 @@
+numpy
+matplotlib
+scipy
+pandas
+scikit-learn
+alphashape
+descartes
+beepy

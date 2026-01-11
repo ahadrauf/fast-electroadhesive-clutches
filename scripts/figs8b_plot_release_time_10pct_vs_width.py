@@ -26,6 +26,7 @@ yerr3 = [np.std(all_load_cell_disengage_times_10pct[width]) for width in all_wid
 fig3, ax3 = plt.subplots(1, 1, layout='constrained', figsize=(6, 4))
 errorbar3 = ax3.errorbar(x3, y3, yerr=yerr3, capsize=5, ecolor='k', elinewidth=2, capthick=2, color='k', lw=2, ls='--')
 scatter3 = ax3.scatter(x3, y3, c='k', s=50, marker='x')
+
 errorbar4 = ax3.errorbar(x2, y2, yerr=yerr3, capsize=5, ecolor='k', elinewidth=2, capthick=2, color='k', lw=2)
 scatter4 = ax3.scatter(x2, y2, c='k', s=50, marker='o')
 ax3.grid(True)

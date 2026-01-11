@@ -18,7 +18,6 @@ plt.rcParams['ps.fonttype'] = 42
 
 folder_loc = "C:/Users/ahadrauf/Desktop/Research/medical_shape_display/data/oscilloscope/20240826_oscilloscope_hv507_differential/"
 file_name = "20240826_18_26_47_oscilloscope_hv507_diff_w=6.35_100.01kOhm_300V_1000Hz"
-# file_name = "20240826_18_28_36_oscilloscope_hv507_diff_w=6.35_100.01kOhm_300V_2000Hz"
 save_folder = "C:/Users/ahadrauf/Desktop/Research/latex/electroadhesive_dynamics_paper/figures/"
 
 

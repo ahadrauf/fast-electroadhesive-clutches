@@ -138,12 +138,12 @@ ax2.set_yticks([1, 2, 5, 10], [1, 2, 5, 10])
 
 ax2.legend([ax2_lines[3], ax2_lines[2], ax2_lines[1], ax2_lines[0], ax2_lines[4]], ["300 V", "250 V", "200 V", "150 V", "Model"],
            loc='lower left', ncol=3, fontsize=14)
-fig2.text(0.00, 1, "(a)", transform=fig2.transFigure, horizontalalignment='left', verticalalignment='top')
+fig2.text(0.00, 1, "(a)", transform=fig2.transFigure, horizontalalignment='left', verticalalignment='top', fontsize=16)
 
 # np.save(save_folder + timestamp + "_plotdata",  [all_V, all_freq, all_x1, all_y1, all_yerr1, all_x2, all_y2, all_yerr2,
 #                                                  all_load_cell_disengage_forces, all_load_cell_preload_forces])
-plt.savefig(save_folder + timestamp + ".png", dpi=300)
-# # plt.savefig("figures/" + timestamp + ".svg")
-plt.savefig(save_folder + timestamp + ".pdf")
+# plt.savefig(save_folder + timestamp + ".png", dpi=300)
+# # # plt.savefig("figures/" + timestamp + ".svg")
+# plt.savefig(save_folder + timestamp + ".pdf")
 
 plt.show()

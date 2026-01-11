@@ -44,7 +44,6 @@ def fit_to_curve(v, f):
     perr = np.sqrt(np.diag(pcov))
     ss_res = np.sum(np.square(f - exponential_func(v, *popt)))
     ss_tot = np.sum(np.square(f - np.mean(f)))
-    # r2 = r2_score(exponential_func(v, *popt), f)  # np.corrcoef(f, exponential_func(v, *popt))[0, 1]**2
     r2 = 1 - ss_res / ss_tot
     # mape = 100/len(v) * np.sum(np.abs(np.divide(f - exponential_func(v, *popt), f)))
     return popt, perr, r2
@@ -154,8 +153,8 @@ ax2.set_xscale('log')
 ax2.set_xticks([0.1, 1, 10, 100, 1000, 10000], ["DC", r"$10^0$", r"$10^1$", r"$10^2$", r"$10^3$", r"$10^4$"])
 
 ax1.legend(ax1_lines, labels, loc='upper left', fontsize=13)
-fig2.text(0.00, 1, "(a)", transform=fig2.transFigure, horizontalalignment='left', verticalalignment='top')
-fig2.text(0.5, 1, "(b)", transform=fig2.transFigure, horizontalalignment='left', verticalalignment='top')
+fig2.text(0.00, 1, "(a)", transform=fig2.transFigure, horizontalalignment='left', verticalalignment='top', fontsize=20)
+fig2.text(0.505, 1, "(b)", transform=fig2.transFigure, horizontalalignment='left', verticalalignment='top', fontsize=20)
 
 # np.save(save_folder + timestamp + "_plotdata",  [all_V, all_freq, all_x1, all_y1, all_yerr1, all_x2, all_y2, all_yerr2,
 #                                                  all_load_cell_disengage_forces, all_load_cell_preload_forces])
