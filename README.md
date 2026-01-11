@@ -36,8 +36,6 @@ The code to run a tensile test is located in ``scripts/run_tensile_test.py``. Th
 
 CAD files for the tensile testing setup are located in the ``cad/`` folder, and KiCAD PCB files for the Microchip HV 507 shift register and power electronics circuit are located in the ``pcb/`` folder.
 
-Raw LaTeX files for the journal paper are located in the ``paper/`` folder, including raw image files for the paper figures - please feel free to ask if you have any questions!
-
 ## Bibliography
 [1] A. M. Rauf and S. Follmer, “Modeling the dynamics of sub-millisecond electroadhesive engagement and release times,” Extreme Mechanics Letters, vol. 79, p. 102382, Sept. 2025, doi: [10.1016/j.eml.2025.102382](https://doi.org/10.1016/j.eml.2025.102382). (Open Access arXiv link [here](https://arxiv.org/abs/2412.16803))
 
