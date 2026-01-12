@@ -1,4 +1,4 @@
-# Optimizing Electroadhesive Clutches for Sub-Millisecond Engagement and Release Times
+# Optimizing Electroadhesive Clutches for Sub-Millisecond Response Times
 
 ![This study presents fast, electrically controllable electroadhesive clutches that offer over 10x faster engagement, release, and dynamic bandwidth compared to prior work and other clutch technologies.](figures/lit_review_combined.png)
 
